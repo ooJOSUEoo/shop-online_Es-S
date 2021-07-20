@@ -1,0 +1,168 @@
+ <table class="consulta" border="1">
+    <thead>
+        <tr>
+            <td>
+                <p><b>id</b></p>
+            </td>
+            <td>
+                <p><b>Nombre</b></p>
+            </td>
+            <td>
+                <p><b>Categoria</b></p>
+            </td>
+            <td>
+                <p><b>Genero</b></p>
+            </td>
+            <td>
+                <p><b>Precio</b></p>
+            </td>
+            <td>
+                <p><b>Cantidad</b></p>
+            </td>
+            <td>
+                <p><b>Caducidad</b></p>
+            </td>
+            <td>
+                <p><b>Talla</b></p>
+            </td>
+            <td>
+                <p><b>Marca</b></p>
+            </td>
+            <td>
+                <p><b>Img</b></p>
+            </td>
+        </tr>
+    </thead>
+        <tr>
+        <td>11</td>
+        <td>P2</td>
+        <td>Perfumeria</td>
+        <td>M</td>
+        <td>10</td>
+        <td>1 pz</td>
+        <td>2021-12-31</td>
+        <td>*</td>
+        <td>Avon</td>
+        <td>2.png</td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>Chance</td>
+        <td>Perfumeria</td>
+        <td>M</td>
+        <td>849</td>
+        <td>1 pz</td>
+        <td>0000-00-00</td>
+        <td>*</td>
+        <td>Chanel</td>
+        <td>10.png</td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>Vata con estampado B</td>
+        <td>Ropa</td>
+        <td>M</td>
+        <td>11685</td>
+        <td>1 pz</td>
+        <td>0000-00-00</td>
+        <td>Ch, M, </td>
+        <td>Versace</td>
+        <td>9.png</td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>Set de Recipientes d</td>
+        <td>Otro</td>
+        <td>H-M</td>
+        <td>159</td>
+        <td>4 pz</td>
+        <td>0000-00-00</td>
+        <td>*</td>
+        <td>Tupperware</td>
+        <td>8.png</td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>Rare Pearls</td>
+        <td>Avon</td>
+        <td>M</td>
+        <td>358.99</td>
+        <td>1 pz</td>
+        <td>0000-00-00</td>
+        <td>*</td>
+        <td>Avon</td>
+        <td>7.png</td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>Tenis Adidas Grand C</td>
+        <td>Calzado</td>
+        <td>H</td>
+        <td>999</td>
+        <td>2 par</td>
+        <td>0000-00-00</td>
+        <td>22-, 23</td>
+        <td>Adidas</td>
+        <td>6.png</td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>Levi's 19491-0131 Su</td>
+        <td>Ropa</td>
+        <td>H</td>
+        <td>969.99</td>
+        <td>1 pz</td>
+        <td>0000-00-00</td>
+        <td>M, G</td>
+        <td>Levi's</td>
+        <td>5.png</td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>Far Away Gold.</td>
+        <td>Otro</td>
+        <td>m</td>
+        <td>498</td>
+        <td>1 pz</td>
+        <td>0000-00-00</td>
+        <td>l</td>
+        <td>Tupperware</td>
+        <td>4.png</td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>Tenis Nike Air Force</td>
+        <td>Calzado</td>
+        <td>H</td>
+        <td>2099</td>
+        <td>3 par</td>
+        <td>0000-00-00</td>
+        <td>24-, 25</td>
+        <td>Nike</td>
+        <td>3.png</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>Coco Mademoiselle</td>
+        <td>Perfumeria</td>
+        <td>M</td>
+        <td>799.98</td>
+        <td>1 pz</td>
+        <td>0000-00-00</td>
+        <td>*</td>
+        <td>Chanel</td>
+        <td>2.png</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>Far Away Gold.</td>
+        <td>Avon</td>
+        <td>M</td>
+        <td>499</td>
+        <td>3 pz</td>
+        <td>0000-00-00</td>
+        <td>*</td>
+        <td>Avon</td>
+        <td></td>
+    </tr>
+    </table>    
