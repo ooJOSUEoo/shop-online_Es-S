@@ -89,8 +89,9 @@ header .buscar input[type="text"]{
 }
 .buscar input[type="text"]{
 	background: none;
-	border:3px solid var(--primario);
-	color:rgba(0, 0, 0, 0.7);
+	border: 1px solid var(--tercero);
+	color:var(--tercero);
+	font-weight: bold;
 	height: 30px;
 	padding: 0 10px;
 	padding-right: 32px;
@@ -155,16 +156,12 @@ a.header-cerrar{
 
 /*-- index --*/
 .part1 {
-	display: flex;
-	justify-content: space-around;
-	margin-bottom: -154px;
+	margin-bottom: -221px;
 }
 table{
 	text-align: center;
-	margin-top: 11%;
-	margin-left: 30%;
-	padding-right: 100px;
 	clear: both;
+	margin: auto;
 }
 td.td-catalogos{
 	border: groove 1em var(--primario);
@@ -249,7 +246,20 @@ p.extracto{
 }
 article.single-article{
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
+}
+img.img-single{
+	width: 300px;
+}
+a.btn-compra-agotada{
+	text-decoration: none;
+	background: transparent;
+	padding:1px 1px;
+	cursor: not-allowed;
+	font-size: 0.000001px;
+	width: 0.00005px;
+	cursor: auto;
+	color: var(--primario);
 }
 a.btn-compra{
 	text-decoration: none;
@@ -528,8 +538,13 @@ button.cerrar{
 		width: 100%;
 	}
 }
+@media screen and (max-width: 331px) {
+	.formulario__input{
+		width: 91%;
+	}
+}
 /* ----- -----  Mediaqueries Otros ----- ----- */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1060px) {
 	header{
 		text-align: center;
 	}
@@ -557,7 +572,7 @@ button.cerrar{
 }
 @media screen and (max-width: 750px) {
 	.post{
-		width: 45%;
+		width: 40%;
 		margin: auto;
 		margin-bottom: 20px;
 		height: 300px;
@@ -566,10 +581,16 @@ button.cerrar{
 		display: block;
 	}
 }
+@media screen and (max-width: 425px) {
+	.post{
+		height: 245px;
+	}
+}
 @media screen and (max-width: 375px) {
 	.post{
 		width: 90%;
 		margin: auto;
 		margin-bottom: 10px;
+		height: 340px;
 	}
 }

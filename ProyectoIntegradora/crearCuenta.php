@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 require './admin/config.php';
 require './funtions.php';
 
@@ -11,27 +11,10 @@ if (!$conexion) {
 }
 
 
-$db = new Database();
-        $query = $db->connect()->prepare('SELECT * FROM cliente');
-        $query->execute();
-
-        $row = $query->fetch(PDO::FETCH_NUM);
-if ($row==true) {
-    //validar rol
-    $nombre = $row['1'];
-
-    $_SESSION['nombre'] = $nombre;
+if ($_SESSION) {
+    header('Location: ' . RUTA);
+} else {
     
-    switch ($_SESSION['nombre']) {
-        case 1:
-            header('Location: ' . RUTA . '/admin');
-            break;
-        case 2:
-            header('Location: ' . RUTA);
-            break;
-        default;
-    }
-
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { 

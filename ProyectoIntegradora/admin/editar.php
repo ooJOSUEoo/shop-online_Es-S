@@ -3,14 +3,23 @@ require 'config.php';
 require '../funtions.php';
 
 comprobarSession();
+$conexion = conexion($bd_config);
 $conexion2 = conexion2();
 
-
+$id_articulo = id_articulo($_GET['id']);
+$post= obtener_post_por_id($conexion, $id_articulo);
+    $post = $post[0];
 $conexion = conexion($bd_config);
+ $categoria= nombre_categoria($conexion, $id_articulo);
+    $categoria = $categoria[0];
+$marca = nombre_marca($conexion, $id_articulo);
+    $marca = $marca[0];
+
 
 if (!$conexion) {
     header('Location: ../error.php');
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = limpiarDatos($_POST['id']);
@@ -33,10 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $archivo_subido = $_FILES['thumb']['tmp_name'];
         move_uploaded_file($archivo_subido, $carpeta . $_FILES['thumb']['name'] );
         $thumb = $_FILES['thumb']['name'];
-        //unlink($thumb_guardada); //Eliminar la img guardada desde la carpeta img cuando haya una img nueva              
-    }
-            
-        /*$statement = $conexion->prepare(
+        //unlink($carpeta.$thumb_guardada); //Eliminar la img guardada desde la carpeta img cuando haya una img nueva              
+    }      
+        $statement = $conexion->prepare(
             'UPDATE productos SET NombreP = :titulo, Genero = :genero, precio = :precio, Cantidad = :cantidad, 
             Caducidad = :caducidad, Talla = :talla, Marca = :marca, img = :thumb, idcategoria = :categoria
             WHERE idproductos = :id'
@@ -53,17 +61,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ':marca' => $marca,
         ':thumb' => $thumb,
         ':id' => $id
-    ));*/
+    ));
 
-    ?>
-    <script>
-        alert('Producto editado exitosamente');
-        location.href = './';
-    </script>
-    <?php  
+    if ($statement==true) {
+        ?>
+        <script>
+            alert('Producto editado exitosamente');
+            window.location.href='.';
+        </script>
+        <?php
+    }else {
+        ?>
+        <script src="js/sweetAlert.js"></script>
+        <script>
+            alert("Error al actualizar, intenta de nuevo");
+            window.location.href='.';
+        </script>
+        <?php 
+    }
+
+     
 
 }else {
-    $id_articulo = id_articulo($_GET['id']);
 
     if (empty($id_articulo)) {
         header('Location: ' . RUTA . '/admin');

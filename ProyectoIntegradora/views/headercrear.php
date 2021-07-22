@@ -1,14 +1,3 @@
-<?php
-
-if (!isset($_SESSION)){
-    session_start();
-}
-
-?>
-   
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,20 +17,13 @@ if (!isset($_SESSION)){
                 <p><a href="<?php echo RUTA; ?>">Elena's Shop <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></p>
             </div>
             <div class="derecha">
-                <form name="busqueda" class="buscar" action="<?php echo RUTA; ?>/buscar.php" method="get">
+                <form name="busqueda" class="buscar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                     <input type="text" name="busqueda" placeholder="Buscar producto o marca">
                     <button type="submit" class="icono fa fa-search"></button>
                 </form>
                 <nav class="menu">
                     <ul>
-                        <li><a href="<?php echo RUTA; ?>/login.php">Inicia Sesion</a></li>
-                        <li><a href="<?php echo RUTA; ?>/crearCuenta.php">Crear Cuenta</a></li>
-                        <li><a class="" id="cerrar" href="<?php echo RUTA; ?>/admin/cerrar.php">Cerrar Sesión</a></li>
-                        <li><a href="<?php echo RUTA; ?>/perfil.php"><i class="fa fa-user-circle" aria-hidden="true"></i> <?php if ($_SESSION == true) {
-                            echo $_SESSION['nombre'];
-                        }else {
-                            echo 'Pefil';
-                        } ?></a></li></li>
+                        <li><a href="<?php echo RUTA; ?>/login.php">Iniciar Sesion</a></li>
                     </ul>
                 </nav>
             </div>

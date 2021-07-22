@@ -8,18 +8,9 @@ $bd_config = array(
 );
 $blog_config = array(
     'post_por_pagina' => '9',
+    'post_por_categoria' => '15',
     'carpeta_imagenes' => 'img/',
     'carpera_reportes' => 'reportes/'
-);
-$blog_admin = array(
-    'usuario' => 'elena',
-    'password' => 'elena2021'
-);
-
-                        
-$blog_cliente = array(
-    'usuario' => '',
-    'password' => ''
 );
 
 ?> 

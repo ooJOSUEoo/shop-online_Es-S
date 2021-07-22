@@ -1,7 +1,7 @@
 <?php require'../views/header.php' ?>
 
 <div class="contenedor">
-    <h2>Panel de Control</h2>
+    <a href="<?php echo RUTA.'/admin'?>"><h2>Panel de Control</h2></a>
     <form name="busqueda" class="buscar" action="<?php echo RUTA; ?>/buscar.admin.php" method="get">
         <input type="text" name="busqueda" placeholder="Buscar">
         <button type="submit" class="icono fa fa-search"></button>

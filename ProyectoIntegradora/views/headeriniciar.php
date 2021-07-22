@@ -1,11 +1,3 @@
-<?php
-
-if (!isset($_SESSION)){
-    session_start();
-}
-
-?>
-   
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,14 +26,7 @@ if (!isset($_SESSION)){
                 </form>
                 <nav class="menu">
                     <ul>
-                        <li><a href="<?php echo RUTA; ?>/login.php">Inicia Sesion</a></li>
                         <li><a href="<?php echo RUTA; ?>/crearCuenta.php">Crear Cuenta</a></li>
-                        <li><a class="" id="cerrar" href="<?php echo RUTA; ?>/admin/cerrar.php">Cerrar Sesión</a></li>
-                        <li><a href="<?php echo RUTA; ?>/perfil.php"><i class="fa fa-user-circle" aria-hidden="true"></i> <?php if ($_SESSION == true) {
-                            echo $_SESSION['nombre'];
-                        }else {
-                            echo 'Pefil';
-                        } ?></a></li></li>
                     </ul>
                 </nav>
             </div>

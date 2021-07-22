@@ -55,12 +55,6 @@
 .slider_banner .flecha-banner.anterior {left: 20px;}
 .slider_banner .flecha-banner.siguiente {right: 20px;}
 /*---- Media Queries al banner ----*/
-@media screen and (max-width: 1024px) {
-	.contenedor1{
-		margin-right: 3%;
-	}
-
-}
 @media screen and (max-width: 750px) {
 	.contenedor1{
 		height: 500px;

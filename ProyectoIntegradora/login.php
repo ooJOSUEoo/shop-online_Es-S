@@ -26,6 +26,10 @@ if (isset($_SESSION['rol'])) {
     }
 }
 
+$clientes = 'SELECT * FROM cliente ORDER BY idcliente DESC';
+        $resul = mysqli_query($conexion2,$clientes);
+        while ($row=mysqli_fetch_assoc($resul)) {}
+
 if (isset($_POST['email']) && isset($_POST['pass'])) {
     $email = limpiarDatos($_POST['email']);
     $pass = limpiarDatos($_POST['pass']);
@@ -35,10 +39,17 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
         $query->execute(['email' => $email, 'pass' => $pass]);
 
         $row = $query->fetch(PDO::FETCH_NUM);
-    
+
     if ($row==true) {
         //validar rol
         $rol = $row['7'];
+        $_SESSION['id'] = $row['0'];
+        $_SESSION['nombre'] = $row['1'];
+        $_SESSION['ap'] = $row['2'];
+        $_SESSION['am'] = $row['3'];
+        $_SESSION['email'] = $row['4'];
+        $_SESSION['tel'] = $row['5'];
+        $_SESSION['pass'] = $row['6'];
         function Nombre_Cliente ($row){
             $nombre=$row['1'];
             return $nombre;
@@ -66,41 +77,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo RUTA; ?>/css/estilos.css">
-    <link rel="stylesheet" href="<?php echo RUTA; ?>/css/estilosIndex.css">
-    <title>Elena's Shop</title>
-</head>
-
-<body>
-    <header>
-        <div class="contenedor">
-            <div class="logo izquierda">
-                <p><a href="<?php echo RUTA; ?>">Elena's Shop</a></p>
-            </div>
-            <div class="derecha">
-                <form name="busqueda" class="buscar" action="<?php echo RUTA; ?>/buscar.php" method="get">
-                    <input type="text" name="busqueda" placeholder="Buscar producto o marca">
-                    <button type="submit" class="icono fa fa-search"></button>
-                </form>
-                <nav class="menu">
-                    <ul>
-                        <li><a href="<?php echo RUTA; ?>/crearCuenta.php">Crear Cuenta</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
+<?php require'./views/headeriniciar.php' ?>
 <div class="contenedor">
     <div class="post-single">
         <article>

@@ -1,7 +1,7 @@
 <?php require'header.php' ?>
 
 <div class="contenedor">
-    <h2>Panel de Control</h2>
+    <a href="<?php echo RUTA.'/admin'?>"><h2>Panel de Control</h2></a>
     <form name="busqueda" class="buscar" action="<?php echo RUTA; ?>/buscar.admin.php" method="get">
         <input type="text" name="busqueda" placeholder="Buscar">
         <button type="submit" class="icono fa fa-search"></button>
@@ -16,7 +16,7 @@
     <div class="post-single">
         <article>
             <h2 class="titulo"><?php echo $post['idproductos'] . '.-' . $post['NombreP']; ?></h2>
-            <a href="editar.php?id=<?php echo $post['idproductos']; ?>">Editar</a>
+            <a href="<?php echo RUTA ?>/admin/editar.php?id=<?php echo $post['idproductos']; ?>">Editar</a>
             <a href="./single.php?id=<?php echo $post['idproductos']; ?>">Ver</a>
         </article>
     </div>

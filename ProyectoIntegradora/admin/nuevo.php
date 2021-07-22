@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $thumb = $_FILES['thumb']['name'];
     
     $valimg = getimagesize($_FILES['thumb']['tmp_name']);
-    $size = $_FILES['thumb']['size'];//150000=150kb
+    $size = $_FILES['thumb']['size'];//200000=200kb
     $carpeta = "../img/";
     $destino = $carpeta .$thumb;   
 if (!is_dir($carpeta)) {
@@ -36,7 +36,7 @@ if (!is_dir($carpeta)) {
     <?php  
 }
     if ($valimg != false) {
-        if ($size <= 150000) {
+        if ($size <= 200000) {
             $archivo_subido = $_FILES['thumb']['tmp_name'];
             move_uploaded_file($archivo_subido, $carpeta . $thumb );
 
@@ -65,7 +65,7 @@ if (!is_dir($carpeta)) {
         }else {
             ?>
             <script>
-                alert('La imagen deve ser menor a 150Kb');
+                alert('La imagen deve ser menor a 200Kb');
             </script>
             <?php 
         }

@@ -2,25 +2,17 @@
 
 <div class="part1">
 	<div class="catalogos">
-		<table>
-			<tr>
+		<table><tr>
+			<?php
+			while ($cat=mysqli_fetch_assoc($RC)) {
+                        
+			?>
+			
 				<td class="td-catalogos">
-					<p class="superior"><a href="#">Catalogo de AVON</a></p>
+					<p class="superior"><a href="categoria.php?id=<?php echo $cat["idcategoria"]; ?>">Catalogo de <?php echo $cat["NombreC"] ?></a></p>
 				</td>
-			</tr>
-			<tr>
-				<td class="td-catalogos">
-					<p class="medio"><a href="#">Catalogo de ROPA</a></p>
-				</td>
-			</tr><tr>
-				<td class="td-catalogos">
-					<p class="medio"><a href="#">Catalogo de CALZADO</a></p>
-				</td>
-			</tr><tr>
-				<td class="td-catalogos">
-					<p class="inferior"><a href="#">Catalogo de PERFUMERIA</a></p>
-				</td>
-			</tr>
+			
+			<?php } ?></tr>
 		</table>
 	</div>
 	<div class="contenedor1" id="contenedor">
