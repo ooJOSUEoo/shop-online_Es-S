@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $clientes = $conexion2->query("SELECT Email FROM cliente WHERE Email='$email'");
     $clientes = $clientes->num_rows;
-        echo $clientes;
             if ($clientes==1) {
                 ?>
                     <script>

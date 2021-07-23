@@ -14,28 +14,49 @@ if (!$conexion) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $titulo = limpiarDatos($_POST['titulo']);  
-
     $thumb = $_FILES['thumb']['name'];
 
-    if (!empty($titulo)) {
-        
+    $carpeta = "../reportes/";
+    $destino = $carpeta .$thumb;  
+
+    if (empty($titulo)) {
+        ?>
+        <script>
+            alert('Escriba el nombre');
+        </script>
+        <?php  
+    }elseif (empty($thumb)) {
+        ?>
+        <script>
+            alert('Ingrese un archivo');
+        </script>
+        <?php
+    }else {
+        $archivo_subido = $_FILES['thumb']['tmp_name'];
+
+        $statement = $conexion->prepare(
+            'INSERT INTO reporte_inventario (idreporte, nombre, archivo)
+            VALUES (null, :titulo, :thumb)'
+        );
+        $statement->execute(array(
+
+            ':titulo' => $titulo,
+            ':thumb' => $_FILES['thumb']['name']
+        ));
+        if ($statement==true && move_uploaded_file($archivo_subido, $carpeta . $thumb)==true) {
+            ?>
+            <script>
+                alert('Reporte guardado');
+            </script>
+            <?php  
+        }else {
+            ?>
+            <script>
+                alert('Error al guardar el reporte, intente de nuevo');
+            </script>
+            <?php 
+        }
     }
-
-    $archivo_subido = RUTA . '/' . $blog_config['carpera_reportes'] . $_FILES['thumb']['name'];
-
-    move_uploaded_file($thumb, $archivo_subido);
-
-    $statement = $conexion->prepare(
-        'INSERT INTO reporte_inventario (idreporte, nombre, archivo)
-        VALUES (null, :titulo, :thumb)'
-    );
-    $statement->execute(array(
-
-        ':titulo' => $titulo,
-        ':thumb' => $_FILES['thumb']['name']
-    ));
-    
-    header('Location: '. RUTA . '/admin/reporte.php');
     
 }
 require '../views/reporte.view.php';

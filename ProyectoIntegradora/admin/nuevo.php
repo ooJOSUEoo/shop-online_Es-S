@@ -40,7 +40,7 @@ if (!is_dir($carpeta)) {
             $archivo_subido = $_FILES['thumb']['tmp_name'];
             move_uploaded_file($archivo_subido, $carpeta . $thumb );
 
-            /*$statement = $conexion->prepare(
+            $statement = $conexion->prepare(
                     'INSERT INTO productos (idproductos, idcategoria, NombreP, Genero, Precio, Cantidad, Caducidad, Talla, marca, img)
                     VALUES (null, :categoria, :titulo, :genero, :precio, :cantidad, :caducidad, :talla, :marca, :thumb)'
                 );
@@ -56,12 +56,22 @@ if (!is_dir($carpeta)) {
                     ':talla' => $talla,
                     ':marca' => $marca,
                     ':thumb' => $_FILES['thumb']['name']
-                ));*/
+                ));
+        
+        if ($statement==true) {
             ?>
             <script>
-                alert('Producto creado exitosamente');
+                alert('Producto registrado exitosamente');
             </script>
             <?php  
+        }else {
+            ?>
+            <script>
+                alert('Error al registrar el producto, intente de nuevo');
+            </script>
+            <?php 
+        }
+
         }else {
             ?>
             <script>

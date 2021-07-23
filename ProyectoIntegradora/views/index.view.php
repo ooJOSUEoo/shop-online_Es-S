@@ -1,20 +1,6 @@
 <?php require'header.php' ?>
 
 <div class="part1">
-	<div class="catalogos">
-		<table><tr>
-			<?php
-			while ($cat=mysqli_fetch_assoc($RC)) {
-                        
-			?>
-			
-				<td class="td-catalogos">
-					<p class="superior"><a href="categoria.php?id=<?php echo $cat["idcategoria"]; ?>">Catalogo de <?php echo $cat["NombreC"] ?></a></p>
-				</td>
-			
-			<?php } ?></tr>
-		</table>
-	</div>
 	<div class="contenedor1" id="contenedor">
 		<section class="tarjeta">
 			<div class="slider_banner">

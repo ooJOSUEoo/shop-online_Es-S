@@ -101,6 +101,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
                         </div>
                 <div class="formulario__grupo formulario__grupo-btn-enviar">
                     <input class="formulario__btn" type="submit" value="Iniciar Sesion">
+                    <a href="<?php echo RUTA. '/recuperarpass.php'?>" class="btn ">Olvide mi contraseña!</a>
                 </div>
             </form>
         </article>

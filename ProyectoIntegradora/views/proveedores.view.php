@@ -26,6 +26,9 @@
                         <td>
                             <p><b>Tel</b></p>
                         </td>
+                        <td>
+                            <p><b>Otros</b></p>
+                        </td>
                     </tr>
                     </thead>
                     <?php
@@ -41,6 +44,9 @@
                         <td><?php echo $row["ApellidoMaterno"] ?></td>
                         <td><?php echo $row["Email"] ?></td>
                         <td><?php echo $row["Tel"] ?></td>
+                        <td><a href="<?php echo (RUTA.'/admin/editarprovee.php?id='.$row['idproveedor']); ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                            <a href="<?php echo (RUTA.'/admin/eliminarprovee.php?id='.$row['idproveedor']); ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>

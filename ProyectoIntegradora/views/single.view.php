@@ -21,7 +21,12 @@
                 <div><p class="extracto">Precio: <i class="fa fa-usd" aria-hidden="true"></i> <?php echo nl2br($post['Precio']); ?></p></div>
                 <div><p class="extracto">Categoria: <?php echo nl2br($categoria['NombreC']); ?></p></div>
                 <div><p class="extracto">Cantidad: <?php echo nl2br($post['Cantidad']); ?></p></div>
+                <?php if ($post['Caducidad']>1) {
+                    ?>
                 <div><p class="extracto">Caducidad: <i class="fa fa-calendar" aria-hidden="true"></i> <?php echo nl2br($post['Caducidad']); ?></p></div>
+                    <?php
+                } ?>
+                <?php ?>
                 <div><p class="extracto">Talla: <?php echo nl2br($post['Talla']); ?></p></div>
                 <div><p class="extracto">Marca: <?php echo nl2br($marca["Nombre"]); ?></p></div>
             </div>
@@ -42,6 +47,7 @@
                         ?>
                         <script>
                             compra.onclick=alert('Cantidad de productos NO existentes, favor de intentar mas tarde o contactarse por email o telefono');
+                            compra.href ='#';
                         </script>
                         
                         <?php

@@ -8,9 +8,24 @@
             <a href="<?php echo RUTA ?>/reporte.exel.php" class="descarga">1.- Generar Reporte</a><br><br>
             <form class="formulario" method="POST" enctype="multipart/form-data"
                 action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-                <input type="text" name="titulo" placeholder="Nombre. ej: Semana 1">
-                <input type="file" name="thumb" id="" accept=".xls, .xlsx, .xml">
-                <input type="submit" value="2.- Guardar Reporte en la Base de Datos">
+                <!-- Grupo: Nombre -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="nombre" class="formulario__label">Nombre</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="titulo" placeholder="ej. Semana 1">
+                            </div>
+                    </div>
+                <!-- Grupo: Imagen -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="nombre" class="formulario__label">Archivo</label>
+                            <div class="formulario__grupo-input">
+                                <input type="file" name="thumb" id="" accept=".xls, .xlsx, .xml"> 
+                            </div>
+                    </div>
+
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="submit" class="formulario-btn formulario__btn" id="enviar">2.- Guardar Reporte en la Base de Datos</button>
+                </div>
             </form>
         </article>
     </div>

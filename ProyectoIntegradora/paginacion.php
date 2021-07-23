@@ -20,10 +20,7 @@
             <li class="disabled">&raquo;</li>
         <?php else: ?>
             <li><a href="index.php?p=<?php echo pagina_actual() + 1 ?>">&raquo;</a></li>
-        <?php endif; 
-        
-        echo($numero_paginas.' '.pagina_actual().' '.$i.' '.$blog_config['post_por_pagina']);
-        ?>
+        <?php endif; ?>
      
     </ul>
 </section>

@@ -15,7 +15,7 @@
                     </div>
                     <!-- Grupo: Genero -->
                     <div class="formulario__grupo" id="grupo__nombre">
-                        <label for="nombre" class="formulario__label">Genero</label>
+                        <label for="nombre" class="formulario__label">Genero actual</label>
                             <div class="formulario__grupo-input">
                                 <select name="genero" id="" class="formulario__input">
                                 <option selected value="<?php echo $post['Genero']; ?>"><?php echo $post['Genero']; ?></option>

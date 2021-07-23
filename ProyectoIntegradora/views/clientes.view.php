@@ -32,6 +32,9 @@
                         <td>
                             <p><b>Rol</b></p>
                         </td>
+                        <td>
+                            <p><b>Otros</b></p>
+                        </td>
                     </tr>
                     </thead>
                     <?php
@@ -49,6 +52,9 @@
                         <td><?php echo $row["Tel"] ?></td>
                         <td><?php echo $row["pass"] ?></td>
                         <td><?php echo $row["idRol"] ?></td>
+                        <td><a href="<?php echo (RUTA.'/admin/editarcliente.php?id='.$row['idcliente']); ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                            <a href="<?php echo (RUTA.'/admin/eliminarcliente.php?id='.$row['idcliente']); ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>

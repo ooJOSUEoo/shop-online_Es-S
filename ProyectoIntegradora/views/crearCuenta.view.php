@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="formulario__grupo formulario__grupo-btn-enviar">
-                            <button type="submit" class="formulario-btn" id="enviar">Enviar</button>
+                            <button type="submit" class="cerrar" id="enviar">Enviar</button>
                         </div>
                     </form>
                 </main><br>

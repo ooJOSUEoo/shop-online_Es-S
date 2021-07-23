@@ -33,8 +33,8 @@ a:hover {
 }
 
 .contenedor {
-	max-width: 1000px;
-	width: 90%;
+	max-width: 1200px;
+	width: 94%;
 	margin: auto;
 }
 
@@ -146,24 +146,63 @@ header .menu ul li a:hover {
 	text-decoration: none;
 }
 
-a.header-cerrar{
+header .menu ul li a.header-cerrar{
 	color: var(--primario);
 	font-size: 0.0005px;
 	width: 0.00005px;
 	cursor: auto;
 	padding-top: 15px;
+	height: 0px;
+	padding: 0px;
 }
 
 /*-- index --*/
 .part1 {
 	margin-bottom: -221px;
 }
-table{
+#btn-menu{
+	display: none;
+}
+#btn-menu:checked ~ nav.menu-catalogos{
+	margin-top: 0;
+}
+label.label-menu{
+	cursor: pointer;
+}
+nav.menu-catalogos{
+	position: absolute;
+	padding-right: 8%;
+	margin-top: -200%;
+	transition: all 1s;
+	max-height: 300px;
+	overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+	z-index: 10001;
+}
+nav.menu-catalogos ul{
+	display: flex;
+	margin-left: 169px;
+	padding-left: 3%;
+	padding-right: 3%;
+	width: 72%;
+	flex-direction: column;
+	border-radius: 4px;	
+	background-color: var(--primario);
+	border-left: 1px solid var(--tercero);
+	border-right: 1px solid var(--tercero); 
+	border-bottom: 1px solid var(--tercero);
+}
+nav.menu-catalogos ul li{
+	border-top: 1px solid var(--tercero);
+	font-size: 12px;
+}
+.ul-categoria{
 	text-align: center;
 	clear: both;
 	margin: auto;
 }
-td.td-catalogos{
+a.btn-categoria{
 	border: groove 1em var(--primario);
 }
 article table.consulta{
@@ -171,6 +210,7 @@ article table.consulta{
 	margin-left: 0%;
 	padding-right: 0;
 	width: 100%;
+	text-align: center;
 }
 a{
 	color: var(--tercero);	
@@ -544,7 +584,7 @@ button.cerrar{
 	}
 }
 /* ----- -----  Mediaqueries Otros ----- ----- */
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 938px) {
 	header{
 		text-align: center;
 	}
@@ -554,6 +594,11 @@ button.cerrar{
 	}
 	.derecha{
 		float: none;
+	}
+}
+@media screen and (max-width: 898px) {
+	nav.menu-catalogos{
+		padding-right: 10%;
 	}
 }
 @media screen and (max-width: 770px) {
@@ -573,12 +618,54 @@ button.cerrar{
 @media screen and (max-width: 750px) {
 	.post{
 		width: 40%;
+		margin-top: 20px;
 		margin: auto;
 		margin-bottom: 20px;
 		height: 300px;
 	}
 	.part1{
 		display: block;
+	}
+	nav.menu-catalogos{
+		padding-right: 13%;
+		right: 30px;
+	}
+	.tarjeta{
+		position: relative;
+		top: -11%;
+	}
+}
+@media screen and (max-width: 755px) {
+	nav.menu-catalogos{
+		padding-right: 16%;
+		
+	}
+}
+@media screen and (max-width: 560px) {
+	.formulario__mensaje-activo{
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 616px){
+	.tarjeta{
+		top: -5%;
+	}
+}
+@media screen and (max-width: 490px){
+	.tarjeta{
+		top: 1%;
+	}
+}
+@media screen and (max-width: 473px) {
+	.formulario__mensaje{
+		height: 90px;
+	}
+}
+@media screen and (max-width: 450px) {
+	nav.menu-catalogos{
+		right: 40px;
+		padding-right: 24%;
+		
 	}
 }
 @media screen and (max-width: 425px) {
@@ -592,5 +679,15 @@ button.cerrar{
 		margin: auto;
 		margin-bottom: 10px;
 		height: 340px;
+	}
+	nav.menu-catalogos{
+		padding-right: 26%;
+		
+	}
+}
+@media screen and (max-width: 353px) {
+	nav.menu-catalogos{
+		padding-right: 29%;
+		
 	}
 }

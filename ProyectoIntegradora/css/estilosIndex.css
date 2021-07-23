@@ -61,4 +61,11 @@
 	}
 
 }
+@media screen and (max-width: 420px) {
+	.contenedor1{
+		width: 97%;
+	}
+
+}
+
 

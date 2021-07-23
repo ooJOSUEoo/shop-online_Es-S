@@ -1,9 +1,12 @@
-<?php
+<?php //session_start();
 require 'admin/config.php';
 require 'funtions.php';
 
+//comprobarSessionC();
+
 $conexion = conexion($bd_config);
 $id_articulo = id_articulo($_GET['id']);
+
 
 if (!$conexion) {
     header('Location: error.php');

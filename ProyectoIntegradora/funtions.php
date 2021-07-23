@@ -106,5 +106,13 @@ function comprobarSession(){
         }
     }
 }
+//Comprobar si esta iniciada una sesion, sin importar el rol
+function comprobarSessionC(){
+    if ($_SESSION['rol']==2) {
+    }elseif ($_SESSION['rol']==1) {
+    }else {
+        header('Location: ' . RUTA . '/login.php');
+    }
+}
 
 ?>

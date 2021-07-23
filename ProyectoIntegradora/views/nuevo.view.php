@@ -4,6 +4,9 @@
         <div class="post-single">
             <article>
                 <h2 class="titulo">Nuevo Articulo</h2>
+                <a href="<?php echo RUTA. '/admin/nuevoprovee.php' ?>" class="btn">Nuevo Proveedor</a>
+                <a href="<?php echo RUTA. '/admin/nuevamarca.php' ?>" class="btn">Registrar Marca</a>
+                <a href="<?php echo RUTA. '/admin/nuevacatego.php' ?>" class="btn">Nueva Categoria</a>
                 <form class="formulario" method="POST" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                     <!-- Grupo: Nombre -->
                     <div class="formulario__grupo" id="grupo__nombre">
@@ -64,7 +67,7 @@
                     <div class="formulario__grupo" id="grupo__nombre">
                         <label for="nombre" class="formulario__label">Talla</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="talla" placeholder="CH / M / G / XL / *">
+                                <input type="text" class="formulario__input" name="talla" placeholder="CH / M / G / XL / *" value="*">
                             </div>
                     </div>
                     <!-- Grupo: Marca -->

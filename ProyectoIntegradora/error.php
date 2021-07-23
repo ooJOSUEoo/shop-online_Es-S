@@ -1,5 +1,6 @@
 <?php
 require 'admin/config.php';
+require 'funtions.php';
 require 'views/header.php';
 ?>
 <div class="contenedor">
