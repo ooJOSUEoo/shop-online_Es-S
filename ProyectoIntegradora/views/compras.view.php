@@ -18,12 +18,14 @@
                             <p><b>Cliente</b></p>
                         </td>
                         <td>
-                            <p><b>Fecha</b></p>
+                            <p><b>Fecha-Hora</b></p>
                         </td>
                         <td>
                             <p><b>Total</b></p>
                         </td>
-
+                        <td>
+                            <p><b>Otros</b></p>
+                        </td>
                     </tr>
                     </thead>
                     <?php
@@ -38,6 +40,9 @@
                         <td><?php echo $row["cliente"] ?></td>
                         <td><?php echo $row["FechaHora"] ?></td>
                         <td><?php echo $row["Total"] ?></td>
+                        <td><a href="<?php echo (RUTA.'/admin/editarcompra.php?id='.$row['idcompra']); ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                            <a href="<?php echo (RUTA.'/admin/eliminarcompra.php?id='.$row['idcompra']); ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>

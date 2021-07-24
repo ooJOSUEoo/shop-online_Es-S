@@ -72,7 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php
     }else {
         ?>
-        <script src="js/sweetAlert.js"></script>
         <script>
             alert("Error al actualizar, intenta de nuevo");
             history.back();
